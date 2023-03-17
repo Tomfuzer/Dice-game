@@ -13,6 +13,18 @@ const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
+//Regras
+console.log(
+  'Dice Game é um jogo para dois jogadores que consiste em: O jogador que fizer 50 pontos primeiro vence! '
+);
+console.log(
+  'O player 1 é quem começa e ele deve rodar o dado, cada número que ele tira é adicionado ao current(pontuação momentânea), se ele tirar 1 ele perde todos os pontos conquistados até o momento e o jogador 2 começa sua rodada'
+);
+console.log(
+  'O jogador atual pode rodar o dado quantas vezes quiser e ir aumentando sua pontuação momentânea, caso o jogador ache que possuí pontos suficientes ele pode apertar o botão HOLD, enviado assim a sua pontuação pra pontuação permanente'
+);
+console.log('A pontuaação permanente é a que conta para a vitória do jogo!');
+
 //Start conditions
 
 score0El.textContent = 0;
@@ -72,7 +84,7 @@ btnHold.addEventListener('click', function () {
     scores[activePlayer] += currentScore;
     document.getElementById(`score--${activePlayer}`).textContent =
       scores[activePlayer];
-    if (scores[activePlayer] >= 100) {
+    if (scores[activePlayer] >= 50) {
       diceEl.classList.add('hidden');
       playing = false;
       document
